@@ -46,6 +46,8 @@ typedef enum {
     EVENTO_EMPUJE
 } EventoMolinete;
 
+```
+
 ### Paso 2: Crear la lógica de transición con `switch-case`
 
 La forma más limpia de codificar esto es crear una función que evalúe el estado actual mediante un `switch`, y dentro de cada estado (`case`), evaluar los eventos con condicionales `if`.
@@ -82,6 +84,8 @@ void procesar_evento(EstadoMolinete *estado_actual, EventoMolinete evento) {
     }
 }
 
+```
+
 ### Paso 3: El bucle principal (`main`)
 
 Finalmente, inicializamos nuestro estado y simulamos cómo el sistema reacciona a los eventos en el tiempo.
@@ -104,6 +108,9 @@ int main() {
 
     return 0;
 }
+
+```
+
 #Paso 09:
 
 # Análisis de Código Fuente STM32 y Evolución de Relojes
