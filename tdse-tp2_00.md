@@ -27,7 +27,7 @@ Tiene dos eventos:
 
 ---
 
-### Paso 1: Definir los Estados y Eventos con `enum`
+### 1) Definir los Estados y Eventos con `enum`
 
 En C, la mejor manera de representar estados y eventos es usando tipos enumerados para que el código sea legible.
 
@@ -48,7 +48,7 @@ typedef enum {
 
 ```
 
-### Paso 2: Crear la lógica de transición con `switch-case`
+### 2) Crear la lógica de transición con `switch-case`
 
 La forma más limpia de codificar esto es crear una función que evalúe el estado actual mediante un `switch`, y dentro de cada estado (`case`), evaluar los eventos con condicionales `if`.
 
@@ -86,7 +86,7 @@ void procesar_evento(EstadoMolinete *estado_actual, EventoMolinete evento) {
 
 ```
 
-### Paso 3: El bucle principal (`main`)
+### 3) El bucle principal (`main`)
 
 Finalmente, inicializamos nuestro estado y simulamos cómo el sistema reacciona a los eventos en el tiempo.
 
@@ -111,7 +111,7 @@ int main() {
 
 ```
 
-#Paso 09:
+# Paso 09
 
 # Análisis de Código Fuente STM32 y Evolución de Relojes
 
