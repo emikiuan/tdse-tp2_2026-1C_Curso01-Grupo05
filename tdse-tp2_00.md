@@ -1,24 +1,37 @@
-#Paso 07:
+# Paso 07
 
-##Conceptos Clave para la Codificación
+## Conceptos Clave para la Codificación
 
-###Estados: Las condiciones en las que puede estar el sistema (ej. Apagado, Encendido, Espera).
+### Estados
+Las condiciones en las que puede estar el sistema (ej. Apagado, Encendido, Espera).
 
-###Eventos (o Entradas): Lo que hace que el sistema cambie de estado (ej. Botón presionado, Temporizador expirado).
+### Eventos (o Entradas)
+Lo que hace que el sistema cambie de estado (ej. Botón presionado, Temporizador expirado).
 
-###Transiciones y Acciones: El cambio de un estado a otro y lo que hace el sistema durante ese cambio (ej. Prender un LED, activar un motor).
+### Transiciones y Acciones
+El cambio de un estado a otro y lo que hace el sistema durante ese cambio (ej. Prender un LED, activar un motor).
 
-##Ejemplo Práctico: El Molinete del Subte
+---
+
+## Ejemplo Práctico: El Molinete del Subte
+
 Para ilustrarlo, imaginemos el clásico ejemplo de un molinete (o torniquete) de estación de tren.
 
-Tiene dos estados: Bloqueado y Desbloqueado.
+Tiene dos estados:
+- Bloqueado
+- Desbloqueado
 
-Tiene dos eventos: Insertar Moneda y Empujar.
+Tiene dos eventos:
+- Insertar Moneda
+- Empujar
 
-###Paso 1: Definir los Estados y Eventos con enum
+---
+
+### Paso 1: Definir los Estados y Eventos con `enum`
+
 En C, la mejor manera de representar estados y eventos es usando tipos enumerados para que el código sea legible.
 
-###C
+```c
 #include <stdio.h>
 
 // 1. Definimos los posibles estados
@@ -32,10 +45,12 @@ typedef enum {
     EVENTO_MONEDA,
     EVENTO_EMPUJE
 } EventoMolinete;
-###Paso 2: Crear la lógica de transición con switch-case
-La forma más limpia de codificar esto es crear una función que evalúe el estado actual mediante un switch, y dentro de cada estado (cada case), evaluar los eventos con condicionales if.
 
-C
+### Paso 2: Crear la lógica de transición con `switch-case`
+
+La forma más limpia de codificar esto es crear una función que evalúe el estado actual mediante un `switch`, y dentro de cada estado (`case`), evaluar los eventos con condicionales `if`.
+
+```c
 // Función que actualiza la máquina de estados
 void procesar_evento(EstadoMolinete *estado_actual, EventoMolinete evento) {
     
@@ -66,10 +81,12 @@ void procesar_evento(EstadoMolinete *estado_actual, EventoMolinete evento) {
             break;
     }
 }
-###Paso 3: El bucle principal (main)
+
+### Paso 3: El bucle principal (`main`)
+
 Finalmente, inicializamos nuestro estado y simulamos cómo el sistema reacciona a los eventos en el tiempo.
 
-C
+```c
 int main() {
     // El sistema inicia bloqueado
     EstadoMolinete estado = ESTADO_BLOQUEADO;
@@ -87,7 +104,6 @@ int main() {
 
     return 0;
 }
-
 #Paso 09:
 
 # Análisis de Código Fuente STM32 y Evolución de Relojes
